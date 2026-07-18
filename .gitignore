@@ -107,3 +107,7 @@ videos/
 dist/
 build/
 .cache/
+
+logs/
+*.log
+.env
