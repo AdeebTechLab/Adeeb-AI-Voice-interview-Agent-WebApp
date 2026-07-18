@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Adeeb AI Meeting Agent logo">
+  <defs>
+    <linearGradient id="g" x1="18" y1="18" x2="112" y2="114" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8eb3ff"/>
+      <stop offset="0.5" stop-color="#3c61db"/>
+      <stop offset="1" stop-color="#142c73"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="58" fill="url(#g)"/>
+  <circle cx="64" cy="64" r="48" fill="none" stroke="rgba(255,255,255,.24)" stroke-width="3"/>
+  <path d="M39 88 57 37h14l18 51H77l-3.8-11H55l-3.8 11H39Zm19.4-21h11.2L64 50.6 58.4 67Z" fill="#fff"/>
+  <path d="M91 42v13h-5V42H73v-5h13V24h5v13h13v5H91Z" fill="#dbe8ff" opacity=".92"/>
+</svg>

@@ -1,0 +1,85 @@
+{
+  "meeting_title": "Adeeb AI Meeting Agent",
+  "interview_title": "Internship Candidate Interview",
+  "bot_name": "Adeeb AI Meeting Agent",
+  "welcome_message": "Hello {candidate_name}. I am Adeeb AI Meeting Agent. I will listen to every answer and transcribe it. You may answer in English, Urdu, Hindi, or mixed speech. You can also say talk in Urdu, talk in English, repeat the question, next question, or ask about the company. Your audio is saved for HR review. Let us begin.",
+  "closing_message": "Thank you for your time. Your interview has been submitted for human review. You may now close this meeting window.",
+  "default_max_followups": 0,
+  "flow_mode": "staged_project_interview",
+  "background_question_count": 4,
+  "project_question_id": "role_specific",
+  "project_followups": 2,
+  "transcription_hints": "Adeeb AI Meeting Agent, Adeeb Technology Lab, The Computer Courses, internship, remote internship, onsite internship, SEO, AEO, social media marketing, graphic design, video editing, WordPress, HTML, CSS, JavaScript, Python, React, Canva, Figma, Excel, machine learning, artificial intelligence, ANN, neural network, decision tree, dataset, accuracy, Urdu, Roman Urdu, Islamabad, Bahawalpur",
+  "questions": [
+    {
+      "id": "introduction",
+      "category": "Introduction",
+      "text": "Please introduce yourself and make sure to cover your full introduction.",
+      "required": true,
+      "max_seconds": 120,
+      "adaptive_follow_up": false,
+      "max_followups": 0,
+      "transcription_mode": "background",
+      "text_ur": "براہ کرم اپنا مکمل تعارف کروائیں۔",
+      "text_hi": "कृपया अपना पूरा परिचय दीजिए।"
+    },
+    {
+      "id": "applying_role",
+      "category": "Applicant details",
+      "text": "Which role or internship are you applying for? Please clearly state the exact role or internship title.",
+      "required": true,
+      "max_seconds": 90,
+      "adaptive_follow_up": false,
+      "max_followups": 0,
+      "transcription_mode": "background",
+      "text_ur": "آپ کس عہدے یا انٹرن شپ کے لیے درخواست دے رہے ہیں؟ براہ کرم عہدے یا انٹرن شپ کا درست نام واضح طور پر بتائیں۔",
+      "text_hi": "आप किस भूमिका या इंटर्नशिप के लिए आवेदन कर रहे हैं? कृपया भूमिका या इंटर्नशिप का सही नाम स्पष्ट रूप से बताइए।"
+    },
+    {
+      "id": "skills_and_work",
+      "category": "Skills and projects",
+      "text": "Which skills, tools, projects, coursework, or work examples best show that you are a good fit for this role?",
+      "required": true,
+      "max_seconds": 150,
+      "adaptive_follow_up": false,
+      "max_followups": 0,
+      "transcription_mode": "background",
+      "text_ur": "کون سی مہارتیں، ٹولز، پراجیکٹس، کورس ورک یا کام کی مثالیں ظاہر کرتی ہیں کہ آپ اس عہدے کے لیے موزوں ہیں؟",
+      "text_hi": "कौन-सी कौशल, टूल, प्रोजेक्ट, कोर्सवर्क या काम के उदाहरण दिखाते हैं कि आप इस भूमिका के लिए उपयुक्त हैं?"
+    },
+    {
+      "id": "problem_solving",
+      "category": "Skill follow-up and problem solving",
+      "text": "Describe one difficult problem you faced while using one of the skills or tools you mentioned. What did you do, and what was the result?",
+      "required": true,
+      "max_seconds": 150,
+      "adaptive_follow_up": false,
+      "max_followups": 0,
+      "transcription_mode": "background",
+      "adaptive_from_previous": true,
+      "adaptive_focus": "skill_problem_followup",
+      "text_ur": "آپ نے جن مہارتوں یا ٹولز کا ذکر کیا، ان میں سے کسی ایک کو استعمال کرتے ہوئے پیش آنے والے مشکل مسئلے کی مثال دیں۔ آپ نے کیا کیا اور نتیجہ کیا نکلا؟",
+      "text_hi": "आपने जिन कौशल या टूल का उल्लेख किया, उनमें से किसी एक का उपयोग करते समय आई कठिन समस्या का उदाहरण दीजिए। आपने क्या किया और परिणाम क्या रहा?"
+    },
+    {
+      "id": "role_specific",
+      "category": "Project-based skills",
+      "text": "Describe one project that best proves you can do the role you are applying for. Explain the project goal, your personal contribution, the tools or methods you used, and the result.",
+      "required": true,
+      "max_seconds": 180,
+      "adaptive_follow_up": true,
+      "max_followups": 1,
+      "transcription_mode": "immediate",
+      "followup_plan": [
+        "project_depth",
+        "skill_evidence"
+      ],
+      "text_ur": "اپنے کسی ایک ایسے پراجیکٹ کے بارے میں بتائیں جو ثابت کرے کہ آپ مطلوبہ عہدے کا کام کر سکتے ہیں۔ پراجیکٹ کا مقصد، آپ کی ذاتی ذمہ داری، استعمال کیے گئے ٹولز یا طریقے، اور نتیجہ بیان کریں۔",
+      "text_hi": "अपने किसी एक ऐसे प्रोजेक्ट के बारे में बताइए जो साबित करे कि आप आवेदन की गई भूमिका का काम कर सकते हैं। प्रोजेक्ट का उद्देश्य, आपका व्यक्तिगत योगदान, उपयोग किए गए टूल या तरीके और परिणाम बताइए।"
+    }
+  ],
+  "welcome_message_ur": "السلام علیکم {candidate_name}۔ میں ادیب اے آئی میٹنگ ایجنٹ ہوں۔ پہلے چار جوابات محفوظ ہو کر پس منظر میں تحریر کیے جائیں گے۔ آخری پراجیکٹ والا جواب فوراً سمجھا جائے گا تاکہ میں دو متعلقہ اضافی سوال پوچھ سکوں۔ آپ اردو، انگریزی، ہندی یا ملی جلی زبان میں جواب دے سکتے ہیں۔ زبان بدلنے کے لیے کہیں: انگریزی میں بات کریں یا اردو میں بات کریں۔ سوال دوبارہ سننے کے لیے دوبارہ کہیں، اور سوال چھوڑنے کے لیے اگلا سوال کہیں۔ آپ کی آڈیو ایچ آر کے جائزے کے لیے محفوظ کی جاتی ہے۔ آئیے شروع کرتے ہیں۔",
+  "welcome_message_hi": "नमस्ते {candidate_name}। मैं अदीब एआई मीटिंग एजेंट हूँ। पहले चार उत्तर सुरक्षित होकर पृष्ठभूमि में ट्रांसक्राइब होंगे। अंतिम प्रोजेक्ट उत्तर तुरंत समझा जाएगा ताकि मैं दो संबंधित फॉलो-अप प्रश्न पूछ सकूँ। आप हिंदी, उर्दू, अंग्रेज़ी या मिश्रित भाषा में उत्तर दे सकते हैं। भाषा बदलने के लिए कहें: अंग्रेज़ी में बात करें या उर्दू में बात करें। प्रश्न दोहराने के लिए दोबारा कहें और छोड़ने के लिए अगला प्रश्न कहें। आपकी ऑडियो एचआर समीक्षा के लिए सुरक्षित की जाती है। आइए शुरू करें।",
+  "closing_message_ur": "آپ کے وقت کا شکریہ۔ آپ کا انٹرویو انسانی جائزے کے لیے جمع کر دیا گیا ہے۔ اب آپ یہ میٹنگ ونڈو بند کر سکتے ہیں۔",
+  "closing_message_hi": "आपके समय के लिए धन्यवाद। आपका इंटरव्यू मानव समीक्षा के लिए जमा कर दिया गया है। अब आप यह मीटिंग विंडो बंद कर सकते हैं।"
+}

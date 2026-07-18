@@ -1,0 +1,19 @@
+QUESTION 1: Please introduce yourself and make sure to cover your full introduction.
+ORIGINAL SPOKEN TRANSCRIPT: میرا نام کاشان عبید ہے اور میں مدفار گھر سے تعلق رکھتا ہوں اور میں ڈی ایس آرٹیفیشل انڈرگریجویٹ کا تعلیم حاصل کر رہا ہوں اور میں اس وقت 6ویں سمستر میں ہوں
+ENGLISH MEANING: My name is Kashan Abid and I'm from Madfaar house and I'm studying DSR Artificial Intelligence and I am currently in 6th semester.
+
+QUESTION 2: Which role or internship are you applying for? Please clearly state the exact role or internship title.
+ORIGINAL SPOKEN TRANSCRIPT: मैं AI and machine learning internship कے لیے ہوں گا، میں AI or machine learning کے لیے ہوں گا
+ENGLISH MEANING: I will apply for the AI and machine learning internship, I will apply for AI or machine learning
+
+QUESTION 3: Which skills, tools, projects, coursework, or work examples best show that you are a good fit for this role?
+ORIGINAL SPOKEN TRANSCRIPT: मैं बहुत सारी टूल्स जानता हूं जैसा कि OpenCV, YOLO, और मशीन लर्निंग एल्गोरिदम जिसके लिए मैं इस प्रोसेस के लिए अप्लाई करूँ
+ENGLISH MEANING: I have a lot of tools such as OpenCV, YOLO, and machine learning algorithms which I apply for this process
+
+QUESTION 4: Can you describe a challenging problem you faced while using OpenCV, and how you overcame it?
+ORIGINAL SPOKEN TRANSCRIPT: In the open CV, I didn't have any problems, but I made an A & N project with both of them, but they also worked for me.
+ENGLISH MEANING: In the open CV, I didn't have any problems, but I made an Artificial Neural project with both of them, but they also worked for me.
+
+QUESTION 5: Describe one project that best proves you can do the role you are applying for. Explain the project goal, your personal contribution, the tools or methods you used, and the result.
+ORIGINAL SPOKEN TRANSCRIPT: Yes, indeed, I have done a lot of work with Artificial Neural Networks and other techniques. I have completed these projects in this project. Transfer learning. Transfer learning, I said, TensorFlow. And that's what I wanted to answer.
+ENGLISH MEANING: Yes, indeed, I have done a lot of work with Artificial Neural Networks and other techniques. I have completed these projects in this project. Transfer learning. Transfer learning, I said, TensorFlow. And that's what I wanted to answer.

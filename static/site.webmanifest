@@ -1,0 +1,12 @@
+{
+  "name": "Adeeb AI Meeting Agent",
+  "short_name": "Adeeb AI",
+  "start_url": "/join",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "icons": [
+    {"src": "/static/favicon-32.png?v=155", "sizes": "32x32", "type": "image/png"},
+    {"src": "/static/apple-touch-icon.png?v=155", "sizes": "180x180", "type": "image/png"}
+  ]
+}

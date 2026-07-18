@@ -1,0 +1,22 @@
+Meeting: Adeeb AI Meeting Agent
+Candidate: Hgdhsr
+Created (UTC): 2026-07-18T15:08:08.956088+00:00
+
+1. [Introduction] Interviewer: Please introduce yourself and make sure to cover your full introduction.
+Original Urdu transcript: میرا نام کاشان عبید ہے اور میں مدفار گھر سے تعلق رکھتا ہوں اور میں ڈی ایس آرٹیفیشل انڈرگریجویٹ کا تعلیم حاصل کر رہا ہوں اور میں اس وقت 6ویں سمستر میں ہوں
+Candidate answer in English: My name is Kashan Abid and I'm from Madfaar house and I'm studying DSR Artificial Intelligence and I am currently in 6th semester.
+
+2. [Applicant details] Interviewer: Which role or internship are you applying for? Please clearly state the exact role or internship title.
+Original Urdu transcript: मैं AI and machine learning internship कے لیے ہوں گا، میں AI or machine learning کے لیے ہوں گا
+Candidate answer in English: I will apply for the AI and machine learning internship, I will apply for AI or machine learning
+
+3. [Skills and projects] Interviewer: Which skills, tools, projects, coursework, or work examples best show that you are a good fit for this role?
+Original Urdu transcript: मैं बहुत सारी टूल्स जानता हूं जैसा कि OpenCV, YOLO, और मशीन लर्निंग एल्गोरिदम जिसके लिए मैं इस प्रोसेस के लिए अप्लाई करूँ
+Candidate answer in English: I have a lot of tools such as OpenCV, YOLO, and machine learning algorithms which I apply for this process
+
+4. [Skill follow-up and problem solving] Interviewer: Can you describe a challenging problem you faced while using OpenCV, and how you overcame it?
+Original Urdu transcript: In the open CV, I didn't have any problems, but I made an A & N project with both of them, but they also worked for me.
+Candidate answer in English: In the open CV, I didn't have any problems, but I made an Artificial Neural project with both of them, but they also worked for me.
+
+5. [Project-based skills] Interviewer: Describe one project that best proves you can do the role you are applying for. Explain the project goal, your personal contribution, the tools or methods you used, and the result.
+Candidate answer in English: Yes, indeed, I have done a lot of work with Artificial Neural Networks and other techniques. I have completed these projects in this project. Transfer learning. Transfer learning, I said, TensorFlow. And that's what I wanted to answer.

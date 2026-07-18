@@ -1,0 +1,8 @@
+{
+  "source_mode": "local_csv",
+  "google_sheet_csv_url": "",
+  "auto_sync_minutes": 30,
+  "last_synced_at": "",
+  "last_sync_status": "Using bundled local FAQ CSV.",
+  "last_record_count": 0
+}

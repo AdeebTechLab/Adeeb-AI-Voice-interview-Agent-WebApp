@@ -1,0 +1,59 @@
+[2026-07-18T15:10:45.076603+00:00] CANDIDATE · speech
+Two, three, Urdu.
+
+[2026-07-18T15:10:47.140507+00:00] AGENT · language_preference
+جی ضرور، اب میں آپ سے اردو میں بات کروں گا۔ اب اگلا سوال سنیں۔ براہ کرم اپنا مکمل تعارف کروائیں۔
+
+[2026-07-18T15:11:15.271363+00:00] AGENT · question
+Which role or internship are you applying for? Please clearly state the exact role or internship title.
+
+[2026-07-18T15:12:22.107394+00:00] CANDIDATE · answer_ready
+My name is Kashan Abid and I'm from Madfaar house and I'm studying DSR Artificial Intelligence and I am currently in 6th semester.
+
+[2026-07-18T15:12:36.412753+00:00] CANDIDATE · speech
+I will apply for the AI and machine learning internship, I will apply for AI or machine learning
+
+[2026-07-18T15:12:37.279428+00:00] AGENT · llm_question
+Which skills, tools, projects, coursework, or work examples best show that you are a good fit for this role?
+
+[2026-07-18T15:13:53.863454+00:00] CANDIDATE · answer_ready
+I have a lot of tools such as OpenCV, YOLO, and machine learning algorithms which I apply for this process
+
+[2026-07-18T15:13:54.731225+00:00] AGENT · skill_problem_followup
+Can you describe a challenging problem you faced while using OpenCV, and how you overcame it?
+
+[2026-07-18T15:15:01.961460+00:00] CANDIDATE · answer_ready
+In the open CV, I didn't have any problems, but I made an Artificial Neural project with both of them, but they also worked for me.
+
+[2026-07-18T15:15:03.875270+00:00] AGENT · project_question
+Can you describe a specific project that you worked on that best demonstrates your skills in AI and machine learning, including the project goal, your personal contribution, the tools or methods you used, and the result?
+
+[2026-07-18T15:16:41.916175+00:00] CANDIDATE · speech
+I worked on the ANN project, which was a hard design prediction model. It had two things, one was that it predicted heart designs and the other was that it told how a certain type of heart problem could be picked, and I was working on the machine learning part.
+
+[2026-07-18T15:17:18.003357+00:00] AGENT · clarification
+میں نے ANN پروجیکٹ پر کام کیا، جو کہ ایک مشکل ڈیزائن پریڈکشن ماڈل تھا۔ اس کے دو حصے تھے، ایک یہ کہ وہ ہارٹ ڈیزائنز کی پیشنکشن کرتا تھا اور دوسرا یہ کہ وہ یہ بتاتا تھا کہ دل کے ایک خاص قسم کے مسئلے کی نشاندہی کیسے کی جا سکتی ہے، اور میں مشین لرننگ والے حصے پر کام کر رہا تھا۔ میرا ذاتی حصہ درست پیشنکشنز حاصل کرنے کے لیے مشین لرننگ الگورتھم کو نافذ کرنا تھا۔ میں نے اس پروجیکٹ کے لیے بنیادی طور پر Python اور TensorFlow کا استعمال کیا۔ اس کا نتیجہ ایک ایسا ماڈل تھا جس نے ہارٹ ڈیزائنز کی پیشنکشن اور دل کے مسائل کی نشاندہی کرنے میں اعلیٰ درجے کی ایکوریسی حاصل کی۔
+
+[2026-07-18T15:18:56.368014+00:00] CANDIDATE · speech
+Yes, indeed, I have done a lot of work with Artificial Neural Networks and other techniques. I have completed these projects in this project.
+
+[2026-07-18T15:18:57.653736+00:00] AGENT · project_depth_follow_up
+Can you elaborate on how you applied Transfer Learning in that project?
+
+[2026-07-18T15:20:37.883596+00:00] CANDIDATE · speech
+Transfer learning. Transfer learning, I said, TensorFlow. And that's what I wanted to answer.
+
+[2026-07-18T15:20:38.686853+00:00] AGENT · skill_evidence_follow_up
+How did you verify the accuracy of your model's performance in that project?
+
+[2026-07-18T15:21:37.466668+00:00] CANDIDATE · speech
+That's it, I just gave you an interview, I'll finish the interview.
+
+[2026-07-18T15:21:39.638420+00:00] AGENT · instruction
+انٹرویو ریکارڈ مکمل رکھنے کے لیے، کسی سوال کو چھوڑنے کے لیے نیکسٹ کوئسچن کہیں یا Next بٹن استعمال کریں۔ آخری سوال کے بعد میٹنگ خود مکمل ہو جائے گی۔
+
+[2026-07-18T15:22:34.391453+00:00] CANDIDATE · speech
+I will talk about my first project which proves I can do this role. The project goal was to create a mobile app that provides a platform for people to play their favorite games. My personal contribution was that I designed the app's UI/UX and did its backend development. I used React Native and Node.js. The result was that we released the app in the market and its response was very good.
+
+[2026-07-18T15:22:34.463021+00:00] AGENT · closing
+Thank you for your time. Your interview has been submitted for human review. You may now close this meeting window.

@@ -1,0 +1,47 @@
+[2026-07-18T14:59:33.243574+00:00] AGENT · question
+Which role or internship are you applying for? Please clearly state the exact role or internship title.
+
+[2026-07-18T15:00:19.072647+00:00] CANDIDATE · answer_ready
+My name is Kashaan Abid and I am from Refrager, I am currently pursuing BS Artificial Intelligence and I'm in 6th semester
+
+[2026-07-18T15:00:45.982953+00:00] CANDIDATE · speech
+I am applying for machine learning internship
+
+[2026-07-18T15:00:47.503328+00:00] AGENT · role_specific_question
+Can you describe a project where you applied machine learning concepts to solve a real-world problem, and what was your role in that project?
+
+[2026-07-18T15:01:15.614478+00:00] AGENT · question
+Which skills, tools, projects, coursework, or work examples best show that you are a good fit for this role?
+
+[2026-07-18T15:01:46.530031+00:00] CANDIDATE · answer_ready
+Yes, I have recently made a project of ANN which is a machine learning algorithm it is basically said a heart disease production model which I have made
+
+[2026-07-18T15:02:17.909198+00:00] CANDIDATE · answer_ready
+Yes, I am familiar with tools like TensorFlow, YOLO and OpenCV which are like machine learning techniques
+
+[2026-07-18T15:02:19.233431+00:00] AGENT · skill_problem_followup
+Can you describe a challenging issue you encountered while implementing the ANN model for the heart disease production model, and how you overcame it?
+
+[2026-07-18T15:03:17.341362+00:00] CANDIDATE · answer_ready
+No, like I didn't face any issue like that but I face issues in like I am to confirm that every metrics is learned perfectly
+
+[2026-07-18T15:03:19.149928+00:00] AGENT · project_question
+Can you describe the heart disease production model project you mentioned earlier, including its goal, your personal contribution, the tools or methods you used, and the result?
+
+[2026-07-18T15:04:45.759796+00:00] CANDIDATE · speech
+Yes, the main goal is to predict the heart disease which are arising among the elders like this model will detect their health and then tell like how oftenly they how likely they have to get the heart diseases and the methods are used as I mentioned are used A&M and the results are nice like I have gained almost 95% accuracy
+
+[2026-07-18T15:04:46.935260+00:00] AGENT · project_depth_follow_up
+Can you elaborate on how you used A&M in the heart disease prediction model, and what specific A&M technique contributed to the 95% accuracy?
+
+[2026-07-18T15:05:51.291069+00:00] CANDIDATE · speech
+No, I said A and N, not A and M. And the methods I use is like I make matrices like that coach learn the matrices as their best to overcome overfitting and underfitting
+
+[2026-07-18T15:05:52.878755+00:00] AGENT · skill_evidence_follow_up
+How did you validate the 95% accuracy of your heart disease prediction model, and what metrics or methods did you use to measure its performance?
+
+[2026-07-18T15:06:57.864549+00:00] CANDIDATE · speech
+As I said earlier that I have made sure that every matrix in the reports will learn every pattern of the dataset to predict high and accurate.
+
+[2026-07-18T15:06:57.933546+00:00] AGENT · closing
+Thank you for your time. Your interview has been submitted for human review. You may now close this meeting window.

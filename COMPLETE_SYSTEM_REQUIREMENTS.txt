@@ -1,0 +1,146 @@
+ADEEB AI MEETING AGENT v15.5.2
+COMPLETE SYSTEM REQUIREMENTS AND PRE-FLIGHT CHECKLIST
+=====================================================
+
+REQUIRED OPERATING SYSTEM AND SOFTWARE
+1. 64-bit Windows 10 or Windows 11.
+2. 64-bit Python 3.10, 3.11, 3.12, or 3.13 from python.org.
+   During installation enable Add python.exe to PATH and Install Python Launcher.
+3. Windows PowerShell 5.1, included with normal Windows 10/11 installations.
+4. Microsoft Visual C++ Redistributable 2015-2022 x64 if CTranslate2 or ONNX Runtime reports a missing DLL.
+5. Current Google Chrome or Microsoft Edge on Windows.
+6. Chrome on Android or Safari/Chrome on iPhone for candidate meetings.
+7. Working microphone and speaker with browser permission.
+8. Stable internet access.
+
+REQUIRED FOR THE INTENDED URDU AND LLM QUALITY
+1. A valid GROQ_API_KEY in .env.
+2. LLM_PROVIDER=auto or groq.
+3. GROQ_STT_ENABLED=true.
+4. GROQ_STT_ALL_LANGUAGES=true on slower computers.
+5. URDU_ASR_PROVIDER=auto or groq.
+6. EDGE_TTS_ENABLED=true for server-generated Urdu/English/Hindi speech.
+7. Firewall, antivirus, school/company proxy, and DNS must allow outbound HTTPS for:
+   - api.groq.com
+   - Edge TTS endpoints
+   - Cloudflare / cloudflared
+8. Port 8000 must be free.
+
+RECOMMENDED STAGED SETTINGS
+STAGED_INTERVIEW_FLOW=true
+FAST_ANSWER_QUEUE=true
+STAGED_TRANSCRIPT_WAIT_SECONDS=150
+PRELOAD_LOCAL_WHISPER=false
+MAX_FOLLOWUPS_PER_QUESTION=2
+QUESTION_REPEAT_SIMILARITY=0.78
+
+The first four normal answers are queued in a single controlled transcription pipeline.
+This prevents several Whisper jobs from competing for CPU and RAM on a slower computer.
+Question 5 and its two project follow-ups are transcribed immediately for LLM reasoning.
+
+PYTHON DEPENDENCIES
+requirements.txt contains these direct packages:
+- fastapi 0.128.2
+- uvicorn 0.48.0
+- faster-whisper 1.2.1
+- ctranslate2 4.8.1
+- python-multipart 0.0.29
+- httpx 0.28.1
+- python-dotenv 1.2.2
+- jinja2 3.1.6
+- cryptography 46.0.4
+- pypdf 5.9.0
+- edge-tts 7.2.8
+
+Complete pinned dependency files are included for:
+- requirements-lock-py310.txt
+- requirements-lock-py311.txt
+- requirements-lock-py312.txt
+- requirements-lock-py313.txt
+
+Do not delete or rename the lock files. FIRST_TIME_SETUP.bat selects the matching file automatically.
+
+HARDWARE
+Minimum for Groq-backed staged use:
+- 4 GB RAM
+- dual-core 64-bit CPU
+- 3 GB free disk space
+
+Recommended:
+- 8 GB RAM or more
+- four CPU cores or more
+- 6 GB free disk space
+
+Local Whisper fallback can download a large model and run slowly. With a valid Groq key,
+keep PRELOAD_LOCAL_WHISPER=false so the app starts quickly and loads local Whisper only if needed.
+
+FILES THAT MUST REMAIN
+app.py
+identity.py
+questions.json
+company_knowledge.md
+requirements.txt
+all requirements-lock-py*.txt files
+.env.example
+templates\
+static\
+scripts\
+FIRST_TIME_SETUP.bat
+START_ADEEB.bat
+CHECK_SETUP.bat
+REPAIR_ADEEB.bat
+INSTALL_CLOUDFLARE.bat
+
+FIRST INSTALLATION ON ANOTHER COMPUTER
+1. Extract the whole ZIP. Do not run BAT files inside the ZIP preview.
+2. Install supported 64-bit Python.
+3. Run FIRST_TIME_SETUP.bat and wait for SETUP COMPLETED SUCCESSFULLY.
+4. Set ADMIN_PASSWORD and GROQ_API_KEY in .env.
+5. Run CHECK_SETUP.bat. Resolve every reported error before continuing.
+6. Run START_ADEEB.bat.
+7. Keep both server and tunnel windows open.
+8. Open the newest /join URL from CURRENT_PUBLIC_LINK.txt.
+9. Complete one English and one Urdu test interview before a real candidate joins.
+
+COMMON FAILURE CAUSES
+- Project not fully extracted.
+- Old .venv copied from another computer.
+- Unsupported or 32-bit Python.
+- Missing Visual C++ x64 runtime.
+- Invalid Groq key or blocked API access.
+- Port 8000 already in use.
+- Antivirus blocked python.exe or cloudflared.exe.
+- Expired TryCloudflare URL reused after restart.
+- Phone microphone permission denied.
+- Phone media volume low, silent mode active, or audio routed to Bluetooth.
+- Server or tunnel window closed.
+
+RECOVERY
+1. Close every Adeeb, Python, and Cloudflare window.
+2. Run REPAIR_ADEEB.bat.
+3. Run CHECK_SETUP.bat.
+4. Run START_ADEEB.bat again.
+5. Review logs\server.log and logs\last_error.txt if a failure remains.
+
+PRIVATE FILES NEVER TO SHARE
+.env
+data\
+logs\
+recordings\
+*.sqlite3
+CURRENT_PUBLIC_LINK.txt
+
+TESTED IN THIS BUILD
+- Python source compilation
+- browser JavaScript syntax
+- questions.json validation
+- application import with Python 3.13
+- /healthz, /join, favicon, and interview JavaScript HTTP responses
+- staged Q1-Q4 background flow
+- LLM-generated Q4 skill/problem prompt routing
+- tailored Q5 project prompt routing
+- exactly two project follow-ups
+- combined project answer persistence
+
+External microphone quality, Groq availability, Edge voice, Cloudflare networking, antivirus,
+and each phone's speaker policy must still be tested on the actual target devices.

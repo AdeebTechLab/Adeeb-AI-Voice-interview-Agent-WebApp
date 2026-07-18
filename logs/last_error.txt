@@ -1,0 +1,4 @@
+Startup or setup failed at Sat 07/18/2026 19:46:27.54
+Project: D:\adeeb-ai-meeting-agent-v15.5.2-staged-urdu
+Mode: setup
+Exit code: 1

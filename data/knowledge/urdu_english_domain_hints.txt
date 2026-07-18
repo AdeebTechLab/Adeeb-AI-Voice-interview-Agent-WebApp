@@ -1,0 +1,106 @@
+# Adeeb AI Meeting Agent - editable recognition hints
+# One phrase per line. These phrases help the local speech recogniser preserve
+# names, roles, technical vocabulary, Roman Urdu, Urdu, Hindi and commands.
+# They do NOT train the base Whisper model or guarantee a score.
+
+Adeeb AI Meeting Agent
+Adeeb
+Adeeb Technology Lab
+The Computer Courses
+internship
+remote internship
+onsite internship
+part time internship
+full time internship
+machine learning internship
+software engineering internship
+web development internship
+content writing internship
+graphic design internship
+social media internship
+digital marketing internship
+SEO internship
+AEO
+GEO
+search engine optimisation
+social media marketing
+Google Ads
+Meta Ads
+Google Business Profile
+WordPress
+HTML
+CSS
+JavaScript
+TypeScript
+Python
+Django
+FastAPI
+React
+Next.js
+Node.js
+SQL
+Excel
+Canva
+Figma
+Adobe Photoshop
+Adobe Illustrator
+CapCut
+video editing
+portfolio
+GitHub
+LinkedIn
+ChatGPT
+LLM
+RAG
+retrieval augmented generation
+machine learning
+artificial intelligence
+
+next question
+next one
+move on
+repeat the question
+say it again
+please repeat
+dobara
+phir se
+agla sawal
+agli sawal
+agla question
+next sawal
+sawal dobara
+mujhe samajh nahi aya
+interview khatam
+finish interview
+
+internship ke liye apply kar raha hoon
+internship ke liye apply kar rahi hoon
+main software engineering internship ke liye apply kar raha hoon
+main machine learning internship ke liye apply kar raha hoon
+main remote internship ke liye apply kar raha hoon
+mujhe agla sawal poochain
+sawal dobara poochain
+
+# Urdu script patterns — edit for your organisation and roles
+میں انٹرن شپ کے لیے اپلائی کر رہا ہوں
+میں انٹرن شپ کے لیے اپلائی کر رہی ہوں
+میں نے پائتھن اور ری ایکٹ پر کام کیا ہے
+میں نے ورڈ پریس پر ویب سائٹ بنائی ہے
+میں نے سوشل میڈیا مارکیٹنگ پر کام کیا ہے
+مجھے اگلا سوال پوچھیں
+سوال دوبارہ پوچھیں
+مجھے یہ سوال سمجھ نہیں آیا
+میں ریموٹ انٹرن شپ کرنا چاہتا ہوں
+میں پارٹ ٹائم کام کرنا چاہتا ہوں
+
+# Hindi / Hinglish patterns
+मैं इंटर्नशिप के लिए आवेदन कर रहा हूँ
+मैं इंटर्नशिप के लिए आवेदन कर रही हूँ
+मैंने पाइथन और रिएक्ट पर काम किया है
+मैंने वर्डप्रेस पर वेबसाइट बनाई है
+मुझे अगला सवाल पूछिए
+सवाल दोबारा पूछिए
+मुझे यह सवाल समझ नहीं आया
+main internship ke liye apply kar raha hoon
+maine Python aur React par kaam kiya hai
+mujhe agla sawaal poochiye

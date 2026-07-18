@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adeeb AI Meeting Record</title>
+  <link rel="icon" href="/static/favicon.ico?v=155" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png?v=155" />
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=155" />
+  <link rel="manifest" href="/site.webmanifest?v=155" />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="stylesheet" href="/static/app.css" />
+</head>
+<body class="admin-page">
+  <header class="topbar"><div><a class="brand" href="/">Adeeb AI Meeting Agent</a><span class="muted">Interview record</span></div><a href="/" class="secondary button-link">← Admin</a></header>
+  <main class="container results-wrap" data-session-id="{{ session.id }}">
+    <section class="card"><p class="eyebrow">Candidate record</p><h1 id="recordTitle">Loading…</h1><div id="recordMeta" class="meta-grid"></div><div class="button-row results-actions"><a id="downloadMarkdown" class="secondary button-link">Download .md</a><a id="downloadJson" class="secondary button-link">Download .json</a><button id="printRecord" class="primary">Print / Save PDF</button></div></section>
+    <section class="card"><p class="eyebrow">English summary</p><div id="summary"><p class="muted">Loading summary…</p></div></section>
+    <section class="card"><div class="section-heading"><div><p class="eyebrow">Accuracy review</p><h2>Human-correct the transcript</h2><p class="muted">Reviewing text lets you measure word error rate. Only meetings where the candidate gave optional quality consent contribute to the local learning vocabulary.</p></div><button id="saveReviews" class="primary" type="button">Save corrections</button></div><div id="reviewNote" class="helper"></div><div id="transcriptReview"><p class="muted">Loading transcript review…</p></div></section>
+    <section class="card"><p class="eyebrow">Saved answer audio</p><p class="muted">Each available recording is restricted to the authenticated HR dashboard. Replay audio when a transcript needs verification.</p><div id="audioReview"><p class="muted">Loading saved recordings…</p></div></section>
+    <section class="card"><p class="eyebrow">Final English transcript</p><div id="transcript"><p class="muted">Loading transcript…</p></div></section>
+    <section class="card"><p class="eyebrow">Meeting conversation log</p><div id="conversation"><p class="muted">Loading conversation…</p></div></section>
+  </main>
+  <script src="/static/results.js"></script>
+</body>
+</html>

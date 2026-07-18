@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ config.meeting_title or config.interview_title or "Adeeb AI Meeting" }} · Join</title>
+  <link rel="icon" href="/static/favicon.ico?v=155" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png?v=155" />
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=155" />
+  <link rel="manifest" href="/site.webmanifest?v=155" />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="stylesheet" href="/static/app.css" />
+</head>
+<body class="meeting-page join-page">
+  <main class="join-shell">
+    <header class="meeting-topbar join-topbar">
+      <div>
+        <p class="meeting-eyebrow">Secure remote interview</p>
+        <h1>{{ config.meeting_title or config.interview_title or "Adeeb AI Meeting" }}</h1>
+        <p>One secure link for all applicants. Your identity details create or resume only your own interview record.</p>
+      </div>
+      <div class="meeting-top-actions"><span class="security-pill">Private HR record</span><span class="security-pill">Audio interview</span></div>
+    </header>
+
+    <section class="join-grid">
+      <article class="join-card registration-card">
+        <p class="eyebrow">Candidate registration</p>
+        <h2>Join Adeeb AI Meeting Agent</h2>
+        <p class="muted">Enter the same details used in your application. Your full CNIC and father / guardian name are visible only in the password-protected HR dashboard and are never placed in a public link.</p>
+        <form id="universalJoinForm" class="stack form-locked" novalidate aria-disabled="true">
+          <div class="field-grid identity-fields">
+            <label>Full name *<input id="candidateName" name="candidate_name" maxlength="120" autocomplete="name" placeholder="e.g., Ayesha Khan" required /></label>
+            <label>Father / guardian name *<input id="fatherName" name="father_name" maxlength="120" autocomplete="off" placeholder="e.g., Muhammad Khan" required /></label>
+          </div>
+          <label>CNIC number *<input id="cnic" name="cnic" inputmode="numeric" autocomplete="off" maxlength="15" placeholder="12345-1234567-1" required /></label>
+          <label>I will answer in<select id="preferredLanguage" name="preferred_language"><option value="auto" selected>Urdu / Hindi / English mixed</option><option value="ur">Urdu</option><option value="en">English</option><option value="hi">Hindi</option></select></label>
+          <details class="resume-details"><summary>Resume an incomplete interview</summary><p>Enter the 8-character resume code given when you first joined. Leave this blank for a new interview.</p><label>Resume code<input id="resumeCode" name="resume_code" maxlength="8" autocomplete="one-time-code" placeholder="e.g., A7Q2K9PZ" /></label></details>
+          <label class="consent-label"><input id="consent" type="checkbox" required /> I consent to audio recording, secure HR playback, and English transcription for this interview.</label>
+          <label class="consent-label optional-consent"><input id="qualityConsent" type="checkbox" /> I also consent to the private use of corrected transcripts for speech-quality evaluation. This is optional and does not change my interview.</label>
+          <button class="primary large" type="submit">Continue to meeting</button>
+        </form>
+        <p id="joinStatus" class="helper">Read the audio-quality notice before continuing. Remote candidates must use the secure HTTPS interview link.</p>
+      </article>
+
+      <aside class="join-info-card">
+        <div class="mini-agent-tile"><div class="agent-orb logo-orb"><img src="/static/logo.png" alt="Adeeb logo" /></div><div><p class="eyebrow">Your interviewer</p><h2>{{ config.bot_name or "Adeeb AI Meeting Agent" }}</h2><p>Speaks in English and accepts English, Urdu, Hindi, Hinglish, and mixed speech.</p></div></div>
+        <div class="join-feature-list">
+          <p><strong>Instant flow:</strong> your audio saves first while transcription runs in the background.</p>
+          <p><strong>Audio review:</strong> HR can replay each saved answer to verify any transcription issue.</p>
+          <p><strong>Human review:</strong> the agent records structured notes but does not make hiring decisions.</p>
+          <p><strong>Resume safely:</strong> save your resume code; it is required to reopen an unfinished interview.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="resumeCodeCard" class="join-card resume-code-card hidden">
+      <p class="eyebrow">Save this now</p>
+      <h2>Your interview resume code</h2>
+      <p>Write down this code before opening the meeting. It is required to safely resume an unfinished interview from the shared link.</p>
+      <p id="resumeCodeValue" class="resume-code">—</p>
+      <button id="openMeeting" class="primary large" type="button">Open secure meeting</button>
+    </section>
+  </main>
+
+  <div id="audioDisclaimer" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="audioDisclaimerTitle">
+    <section class="disclaimer-modal">
+      <p class="eyebrow">Before you join</p>
+      <h2 id="audioDisclaimerTitle">Audio quality and recording notice</h2>
+      <p>For the most accurate interview record, please prepare your audio before continuing.</p>
+      <ul class="disclaimer-list">
+        <li>Use a quiet, private area away from fans, traffic, television, and other people.</li>
+        <li>Use good earphones or a headset microphone when available.</li>
+        <li>Use a stable internet connection and keep this browser tab open during the interview.</li>
+        <li>Speak clearly, answer one question at a time, and select Urdu, Hindi, English, or Mixed correctly.</li>
+        <li>Your answers are recorded and saved so authenticated HR can replay them if a transcript needs verification.</li>
+      </ul>
+      <label class="consent-label disclaimer-check"><input id="disclaimerAcknowledgement" type="checkbox" /> I understand and I am ready to continue.</label>
+      <button id="acceptDisclaimer" class="primary large" type="button" disabled>Continue to registration</button>
+    </section>
+  </div>
+  <div id="toast" class="toast hidden" role="status"></div>
+  <script src="/static/join.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ config.meeting_title or config.interview_title or "AI Interview Meeting" }}</title>
+  <link rel="icon" href="/static/favicon.ico?v=155" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png?v=155" />
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=155" />
+  <link rel="manifest" href="/site.webmanifest?v=155" />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="stylesheet" href="/static/app.css?v=15.5" />
+</head>
+<body class="meeting-page">
+  <main class="meeting-shell" data-session-id="{{ session.id }}" data-candidate-name="{{ session.candidate_name }}">
+    <header class="meeting-topbar">
+      <div class="meeting-title-lockup"><img src="/static/logo.png" alt="Adeeb AI logo" class="topbar-logo" /><div><p class="meeting-eyebrow">Private AI interview meeting</p><h1 id="meetingTitle">{{ config.meeting_title or config.interview_title or "AI Interview Meeting" }}</h1><p id="meetingStatus">Preparing your secure meeting room…</p></div></div>
+      <div class="meeting-top-actions"><span id="connectionStatus" class="connection-pill" data-online="true">Connected</span><span class="security-pill">Private link</span><div class="meeting-clock"><span class="live-dot"></span><span id="elapsedMeeting">00:00</span></div></div>
+    </header>
+
+    <section id="consentCard" class="join-card">
+      <p class="eyebrow">Join interview</p>
+      <h2>Meet Adeeb AI Meeting Agent</h2>
+      <p>Before entering, use a quiet room, good earphones or a headset, and a stable internet connection. Your answer audio is saved for authenticated HR replay, then transcribed in English. Adeeb speaks in English and accepts English, Urdu, Hindi, Hinglish, and mixed speech.</p>
+      <label>Your full name<input id="candidateNameInput" maxlength="120" autocomplete="name" placeholder="e.g., Ayesha Khan" /></label>
+      <label class="consent-label"><input id="consent" type="checkbox" /> I consent to audio recording, authenticated HR playback, and English transcription for this interview.</label>
+      <label class="consent-label optional-consent"><input id="qualityConsent" type="checkbox" /> I also consent to using my corrected transcript and retained audio, where enabled, for private speech-quality evaluation. This is optional.</label>
+      <button id="beginButton" class="primary large" disabled>Join meeting</button>
+      <p class="helper">For better accuracy, select the language you will actually use, keep the microphone close, and speak after Adeeb finishes. Remote candidates must use the secure HTTPS link and allow microphone access.</p>
+    </section>
+
+    <section id="meetingRoom" class="meeting-room hidden" aria-live="polite">
+      <div class="meeting-main">
+        <div class="meeting-stage">
+          <article id="botTile" class="participant-tile bot-tile">
+            <div class="tile-bar"><span class="participant-name" id="botName">Adeeb AI Meeting Agent</span><span id="botStateBadge" class="tile-badge">Ready</span></div>
+            <div class="agent-orb logo-orb" aria-hidden="true"><span class="orb-ring ring-one"></span><span class="orb-ring ring-two"></span><img src="/static/logo.png" alt="" /></div>
+            <p class="bot-role">AI Meeting Agent</p>
+            <div class="audio-bars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+          </article>
+          <article class="participant-tile candidate-tile">
+            <div class="tile-bar"><span class="participant-name" id="candidateNameLabel">Candidate</span><span id="candidateMicBadge" class="tile-badge">Mic ready</span></div>
+            <div id="candidateAvatar" class="candidate-avatar">C</div>
+            <p class="candidate-role">Candidate</p>
+            <div id="micRing" class="mic-ring" aria-hidden="true"></div>
+          </article>
+        </div>
+
+        <article class="prompt-card">
+          <div class="progress-line"><span id="progressText">Question 1</span><div class="progress"><div id="progressBar"></div></div></div>
+          <p id="promptLabel" class="eyebrow">Current question</p>
+          <h2 id="questionText">Joining meeting…</h2>
+          <p id="promptHelper" class="muted">Speak clearly after Adeeb finishes. Your answer is transcribed before the agent chooses the next question.</p>
+          <div class="prompt-status-strip" aria-label="Meeting status">
+            <span id="languageLockStatus">English locked — say ‘talk in Urdu’ to change</span>
+            <span id="voicePlaybackStatus" data-mode="ready">Speaker ready</span>
+          </div>
+        </article>
+      </div>
+
+      <aside class="meeting-panel">
+        <div class="agent-status-head"><div><p class="eyebrow">Adeeb activity</p><h2>Transcript & help</h2></div><span id="languageBadge" class="lang-badge">EN</span></div>
+        <div class="language-row"><label for="answerLanguage">Agent and answer language</label><select id="answerLanguage"><option value="en" selected>English</option><option value="ur">Urdu — stay in Urdu</option><option value="hi">Hindi — stay in Hindi</option><option value="auto">Mixed input / English agent</option></select><p class="helper language-helper">Adeeb stays in the selected language until you change it here or say a language command.</p></div>
+        <div id="audioUnlockNotice" class="audio-unlock-notice hidden">Tap once to enable Adeeb's voice on this phone.</div>
+        <button id="audioUnlockButton" class="primary hear-agent-button hidden" type="button">🔊 Hear Adeeb</button>
+        <div id="listeningPanel" class="listening-panel"><span id="listeningPulse" class="pulse-dot"></span><p id="recordingStatus">Waiting for Adeeb to finish speaking…</p><span id="turnTimer">00:00</span></div>
+        <div id="captions" class="captions"><p class="caption-muted">Your transcript and Adeeb’s latest response appear here. Urdu responses are shown in Urdu script.</p></div>
+        <div class="agent-question-box">
+          <label for="agentQuestionInput">Ask Adeeb about the internship</label>
+          <div class="agent-question-row">
+            <input id="agentQuestionInput" maxlength="600" placeholder="Type an approved company or role question" />
+            <button id="askAgentButton" type="button" class="secondary">Ask</button>
+          </div>
+          <p class="helper">Use this only for general help or approved company questions.</p>
+        </div>
+      </aside>
+
+      <nav class="meeting-controls" aria-label="Meeting controls">
+        <button id="micToggle" class="meeting-control active" type="button" title="Pause microphone"><span>🎙</span><small>Mic</small></button>
+        <button id="replayButton" class="meeting-control" type="button" title="Repeat prompt"><span>↻</span><small>Repeat</small></button>
+        <button id="nextButton" class="meeting-control" type="button" title="Skip to next question"><span>→</span><small>Next</small></button>
+        <button id="retryTurnButton" class="meeting-control hidden" type="button" title="Retry the saved answer without recording again"><span>⟳</span><small>Retry answer</small></button>
+        <button id="leaveButton" class="meeting-control leave" type="button" title="Leave and resume later"><span>☎</span><small>Leave</small></button>
+      </nav>
+    </section>
+
+    <section id="pausedCard" class="join-card hidden"><p class="eyebrow">Meeting paused</p><h2>Your progress is saved.</h2><p>You may close this tab and resume from the exact same private meeting link.</p><button id="resumeButton" class="primary">Resume meeting</button></section>
+    <section id="completeCard" class="join-card hidden"><p class="eyebrow">Meeting complete</p><h2>Thank you, <span id="completeName">Candidate</span>.</h2><p id="closingText">Your interview has been submitted for human review.</p><p class="helper">The HR team can now review the English transcript, conversation log, saved audio, and evidence-based summary.</p><button id="closeTabButton" class="primary large" type="button">Close interview tab</button><p id="closeTabHint" class="helper hidden">Your browser may block this button if the tab was not opened by the app. You can safely close the tab manually.</p></section>
+  </main>
+  <audio id="agentAudioElement" class="agent-audio-element" preload="auto" playsinline aria-hidden="true"></audio>
+  <div id="toast" class="toast hidden" role="status"></div>
+  <script src="/static/interview.js?v=15.5"></script>
+</body>
+</html>

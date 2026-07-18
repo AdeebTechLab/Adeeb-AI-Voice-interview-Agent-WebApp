@@ -1,0 +1,19 @@
+QUESTION 1: Please introduce yourself and make sure to cover your full introduction.
+ORIGINAL SPOKEN TRANSCRIPT: My name is Kashaan Abid and I am from Refrager, I am currently pursuing BS Artificial Intelligence and I'm in 6th semester
+ENGLISH MEANING: My name is Kashaan Abid and I am from Refrager, I am currently pursuing BS Artificial Intelligence and I'm in 6th semester
+
+QUESTION 2: Which role or internship are you applying for? Please clearly state the exact role or internship title.
+ORIGINAL SPOKEN TRANSCRIPT: Yes, I have recently made a project of ANN which is a machine learning algorithm it is basically said a heart disease production model which I have made
+ENGLISH MEANING: Yes, I have recently made a project of ANN which is a machine learning algorithm it is basically said a heart disease production model which I have made
+
+QUESTION 3: Which skills, tools, projects, coursework, or work examples best show that you are a good fit for this role?
+ORIGINAL SPOKEN TRANSCRIPT: Yes, I am familiar with tools like TensorFlow, YOLO and OpenCV which are like machine learning techniques
+ENGLISH MEANING: Yes, I am familiar with tools like TensorFlow, YOLO and OpenCV which are like machine learning techniques
+
+QUESTION 4: Can you describe a challenging issue you encountered while implementing the ANN model for the heart disease production model, and how you overcame it?
+ORIGINAL SPOKEN TRANSCRIPT: No, like I didn't face any issue like that but I face issues in like I am to confirm that every metrics is learned perfectly
+ENGLISH MEANING: No, like I didn't face any issue like that but I face issues in like I am to confirm that every metrics is learned perfectly
+
+QUESTION 5: Describe one project that best proves you can do the role you are applying for. Explain the project goal, your personal contribution, the tools or methods you used, and the result.
+ORIGINAL SPOKEN TRANSCRIPT: Yes, the main goal is to predict the heart disease which are arising among the elders like this model will detect their health and then tell like how oftenly they how likely they have to get the heart diseases and the methods are used as I mentioned are used A&M and the results are nice like I have gained almost 95% accuracy No, I said A and N, not A and M. And the methods I use is like I make matrices like that coach learn the matrices as their best to overcome overfitting and underfitting As I said earlier that I have made sure that every matrix in the reports will learn every pattern of the dataset to predict high and accurate.
+ENGLISH MEANING: Yes, the main goal is to predict the heart disease which are arising among the elders like this model will detect their health and then tell like how oftenly they how likely they have to get the heart diseases and the methods are used as I mentioned are used A&M and the results are nice like I have gained almost 95% accuracy No, I said A and N, not A and M. And the methods I use is like I make matrices like that coach learn the matrices as their best to overcome overfitting and underfitting As I said earlier that I have made sure that every matrix in the reports will learn every pattern of the dataset to predict high and accurate.

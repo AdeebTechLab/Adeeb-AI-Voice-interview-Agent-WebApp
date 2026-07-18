@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adeeb AI Meeting Agent · Admin</title>
+  <link rel="icon" href="/static/favicon.ico?v=155" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png?v=155" />
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=155" />
+  <link rel="manifest" href="/site.webmanifest?v=155" />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="stylesheet" href="/static/app.css" />
+</head>
+<body class="admin-page">
+  <header class="topbar">
+    <div class="admin-brand-wrap"><img src="/static/logo.png" alt="Adeeb AI logo" class="admin-logo" /><div><a class="brand" href="/">Adeeb AI Meeting Agent</a><span class="muted">Private interview operations</span></div></div>
+    <span id="healthPill" class="health-pill">Checking local services…</span>
+  </header>
+
+  <main class="container">
+    {% if admin_unprotected %}
+      <p class="warning"><strong>Admin password is not configured.</strong> Before sharing any public link, copy <code>.env.example</code> to <code>.env</code> and set a strong <code>ADMIN_PASSWORD</code>.</p>
+    {% endif %}
+
+    <section class="admin-grid">
+      <article class="card create-card universal-link-card">
+        <p class="eyebrow">One link for every applicant</p>
+        <h1>Universal candidate link</h1>
+        <p class="muted">Send the same secure link to every internee. A candidate enters their own full name, father / guardian name and CNIC. The system creates one record per unique CNIC.</p>
+        <div class="universal-link-row"><input id="universalJoinLink" readonly value="Loading secure link…" /><button id="copyUniversalLink" class="primary" type="button">Copy link</button></div>
+        <p class="helper">The full CNIC and father / guardian name are visible only after HR signs in. They never appear in the shared candidate link. A candidate receives a resume code for an unfinished interview.</p>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">Meeting-agent behavior</p>
+        <h2>Professional candidate flow</h2>
+        <ol class="checklist">
+          <li>The candidate enters their own name and gives recording consent.</li>
+          <li>Adeeb asks questions in English and listens automatically.</li>
+          <li>The candidate may answer in English, Urdu, Hindi, or mixed speech.</li>
+          <li>The agent can repeat, answer approved FAQ questions, ask a relevant follow-up, or move forward when it hears “next question.”</li>
+          <li>HR reviews the evidence-based English transcript and summary.</li>
+        </ol>
+      </article>
+
+      <article class="card span-2">
+        <div class="section-heading">
+          <div><p class="eyebrow">Operations</p><h2>Candidate tracker</h2><p class="muted">Every candidate is created from the same universal link. Authenticated HR can review full name, father / guardian name, full CNIC, progress, and saved audio without exposing identity data in URLs.</p></div>
+          <button id="refreshSessions" class="secondary" type="button">Refresh</button>
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Candidate</th><th>Father / guardian</th><th>CNIC</th><th>Resume code</th><th>Status</th><th>Progress</th><th>Created</th><th>HR record</th><th>Actions</th></tr></thead>
+          <tbody id="sessionsBody"><tr><td colspan="9" class="muted">Loading candidate records…</td></tr></tbody>
+        </table></div>
+      </article>
+
+      <article class="card span-2">
+        <div class="section-heading"><div><p class="eyebrow">Knowledge retrieval</p><h2>Google Sheets + local FAQ RAG</h2><p class="muted">The agent searches approved Markdown notes plus a two-column FAQ source. It speaks an English answer only when it finds verified evidence. Sensitive payment and account rows are blocked by default.</p></div><button id="saveRag" class="primary" type="button">Save RAG source</button></div>
+        <div class="field-grid">
+          <label>FAQ source<select id="ragSourceMode"><option value="local_csv">Bundled local CSV</option><option value="google_sheet">Published Google Sheet CSV</option></select></label>
+          <label>Automatic sync interval (minutes)<input id="ragSyncMinutes" type="number" min="5" max="1440" value="30" /></label>
+        </div>
+        <label>Published Google Sheet CSV URL <span class="helper">Use a CSV URL that opens without Google sign-in. Do not publish confidential material.</span><input id="googleSheetCsvUrl" type="url" placeholder="https://docs.google.com/spreadsheets/d/.../export?format=csv&gid=0" /></label>
+        <div class="button-row"><button id="syncRag" class="secondary" type="button">Sync Google Sheet now</button><span id="ragStatus" class="helper">Loading RAG status…</span></div>
+      </article>
+
+      <article class="card span-2">
+        <div class="section-heading"><div><p class="eyebrow">PDF knowledge import</p><h2>Upload PDF for Adeeb RAG</h2><p class="muted">Upload a readable text PDF such as internship rules, job description, company policy, or training notes. Adeeb can answer from this PDF along with Google Sheet and Markdown knowledge. Do not upload private candidate data.</p></div><button id="uploadPdfRag" class="primary" type="button">Upload PDF</button></div>
+        <div class="field-grid">
+          <label>PDF file<input id="pdfRagFile" type="file" accept="application/pdf,.pdf" /></label>
+          <label>Generate checks<button id="generatePdfQuestions" class="secondary" type="button">Generate 5 PDF questions</button></label>
+        </div>
+        <div class="button-row"><span id="pdfRagStatus" class="helper">Loading PDF knowledge status…</span></div>
+        <div id="pdfRagDocs" class="pdf-doc-list helper">No PDF uploaded yet.</div>
+        <div id="pdfRagQuestions" class="pdf-question-list"></div>
+      </article>
+
+      <article class="card span-2">
+        <div class="section-heading"><div><p class="eyebrow">Accuracy improvement</p><h2>Transcript quality lab</h2><p class="muted">For now, use this area to review actual transcripts against the saved audio. Corrected text improves recognition hints; this version does not run ML training automatically.</p></div><a class="secondary button-link" href="/api/admin/quality/export">Export consented quality CSV</a></div>
+        <div id="qualityMetrics" class="quality-grid"><p class="muted">Loading quality metrics…</p></div>
+      </article>
+
+      <article class="card span-2">
+        <div class="section-heading"><div><p class="eyebrow">Interview configuration</p><h2>Agent name, voice prompts and questions</h2><p class="muted">These settings apply to new meetings. Existing private links retain their original snapshot.</p></div><button id="saveQuestions" class="primary" type="button">Save meeting setup</button></div>
+        <div class="field-grid">
+          <label>Meeting title<input id="meetingTitle" maxlength="140" /></label>
+          <label>Agent name<input id="botName" maxlength="80" /></label>
+        </div>
+        <label>Welcome message <span class="helper">Use <code>{candidate_name}</code> where the agent should say the candidate’s name.</span><textarea id="welcomeMessage" rows="4"></textarea></label>
+        <label>Closing message<textarea id="closingMessage" rows="3"></textarea></label>
+        <label>Recognition hints <span class="helper">Comma-separated company names, tools, acronyms, role names, technical terms, Urdu spellings, or product names.</span><textarea id="transcriptionHints" rows="3" placeholder="Adeeb AI Agent, SEO, WordPress, React, سوشل میڈیا, internship"></textarea></label>
+        <div class="question-head"><div><h3>Questions spoken in English</h3><p class="helper">One follow-up is helpful for vague answers. The agent does not make hiring decisions.</p></div><button id="addQuestion" class="secondary" type="button">+ Add question</button></div>
+        <div id="questions" class="question-list"></div>
+      </article>
+
+      <article class="card span-2">
+        <div class="section-heading"><div><p class="eyebrow">Verified company notes</p><h2>Markdown knowledge base</h2><p class="muted">Add approved information about roles, interview process, schedules, teams, and projects. Adeeb combines it with the RAG FAQ source. Never add secrets or private financial information.</p></div><button id="saveKnowledge" class="primary" type="button">Save knowledge base</button></div>
+        <textarea id="knowledgeBase" class="knowledge-editor" rows="16" spellcheck="true"></textarea>
+      </article>
+    </section>
+  </main>
+  <div id="toast" class="toast hidden" role="status"></div>
+  <script src="/static/admin.js"></script>
+</body>
+</html>
